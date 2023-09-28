@@ -20,9 +20,11 @@ Phylogenomic-analysis-of-the-understudied-Neisseriaceae/roary
 Phylogenomic-analysis-of-the-understudied-Neisseriaceae/script
 + Additional custom scripts used in analysis pipeline.
 
+
 Phylogenomic-analysis-of-the-understudied-Neisseriaceae/Tables
 + Additional Tables.
 
 Phylogenomic-analysis-of-the-understudied-Neisseriaceae/Tree_Files
 + Output RAxML and IQTree tree files. Can be viewed in Itol or other tree software.
-  
+
+[![DOI](https://zenodo.org/badge/697872093.svg)](https://zenodo.org/badge/latestdoi/697872093)
