@@ -1,0 +1,99 @@
+Roary was run with cd 100 so all genomes have the genes assigned in the core genome at the 75, 80, 85, 90, and 95 percent sequence similarity thresholds (see other notes doc). Core genomes where 
+aligned with MAFFT in roary as part of the call and uploaded to the AMNH server. Raxml was called as follows:
+
+##################################################
+raxml -T 8 -m GTRGAMMA -f d -N 1 -s core_gene_alignment.aln -n Neisseriaceae_core_genome_roary75 -p 1977
+
+qsub -N Neisseriaceae_roary75 -l walltime=950:00:00 -o Neisseriaceae_roary75.stdout -e Neisseriaceae_roary75.stderr -V -M danmorr@pennmedicine.upenn.edu -- /usr/local/software/bin/raxml -T 8 -m GTRGAMMA -N 100 -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/75/core_gene_alignment.aln -n Neisseriaceae_roary75 -p 1977 -b 1977
+
+raxml -T 8 -m GTRGAMMA -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/75/core_gene_alignment.aln -f b -t /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/75/RAxML_result.Neisseriaceae_core_genome_roary75 -z /home/dmorreale/RAxML_bootstrap.Neisseriaceae_roary75 -n roary75_Neisseriaceae_bootsfinal
+
+
+##################################################
+raxml -T 8 -m GTRGAMMA -f d -N 1 -s core_gene_alignment.aln -n Neisseriaceae_core_genome_roary80 -p 1977
+
+qsub -N Neisseriaceae_roary80 -l walltime=950:00:00 -o Neisseriaceae_roary80.stdout -e Neisseriaceae_roary80.stderr -V -M danmorr@pennmedicine.upenn.edu -- /usr/local/software/bin/raxml -T 8 -m GTRGAMMA -N 100 -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/80/core_gene_alignment.aln -n Neisseriaceae_roary80 -p 1977 -b 1977
+
+raxml -T 8 -m GTRGAMMA -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/80/core_gene_alignment.aln -f b -t /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/80/RAxML_result.Neisseriaceae_core_genome_roary80 -z /home/dmorreale/RAxML_bootstrap.Neisseriaceae_roary80 -n roary80_Neisseriaceae_bootsfinal
+
+
+
+##################################################
+raxml -T 8 -m GTRGAMMA -f d -N 1 -s core_gene_alignment.aln -n Neisseriaceae_core_genome_roary85 -p 1977
+
+qsub -N Neisseriaceae_roary85 -l walltime=950:00:00 -o Neisseriaceae_roary85.stdout -e Neisseriaceae_roary85.stderr -V -M danmorr@pennmedicine.upenn.edu -- /usr/local/software/bin/raxml -T 8 -m GTRGAMMA -N 100 -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/85/core_gene_alignment.aln -n Neisseriaceae_roary85 -p 1977 -b 1977
+
+raxml -T 8 -m GTRGAMMA -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/85/core_gene_alignment.aln -f b -t /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/85/RAxML_result.Neisseriaceae_core_genome_roary85 -z /home/dmorreale/RAxML_bootstrap.Neisseriaceae_roary85 -n roary85_Neisseriaceae_bootsfinal
+
+
+
+##################################################
+raxml -T 8 -m GTRGAMMA -f d -N 1 -s core_gene_alignment.aln -n Neisseriaceae_core_genome_roary90 -p 1977
+
+qsub -N Neisseriaceae_roary90 -l walltime=950:00:00 -o Neisseriaceae_roary90.stdout -e Neisseriaceae_roary90.stderr -V -M danmorr@pennmedicine.upenn.edu -- /usr/local/software/bin/raxml -T 8 -m GTRGAMMA -N 100 -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/90/core_gene_alignment.aln -n Neisseriaceae_roary90 -p 1977 -b 1977
+
+raxml -T 8 -m GTRGAMMA -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/90/core_gene_alignment.aln -f b -t /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/90/RAxML_result.Neisseriaceae_core_genome_roary90 -z /home/dmorreale/RAxML_bootstrap.Neisseriaceae_roary90 -n roary90_Neisseriaceae_bootsfinal
+
+
+
+##################################################
+raxml -T 8 -m GTRGAMMA -f d -N 1 -s core_gene_alignment.aln -n Neisseriaceae_core_genome_roary95 -p 1977
+
+qsub -N Neisseriaceae_roary95 -l walltime=950:00:00 -o Neisseriaceae_roary95.stdout -e Neisseriaceae_roary95.stderr -V -M danmorr@pennmedicine.upenn.edu -- /usr/local/software/bin/raxml -T 8 -m GTRGAMMA -N 100 -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/95/core_gene_alignment.aln -n Neisseriaceae_roary95 -p 1977 -b 1977
+
+raxml -T 8 -m GTRGAMMA -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/95/core_gene_alignment.aln -f b -t /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/95/RAxML_result.Neisseriaceae_core_genome_roary95 -z /home/dmorreale/RAxML_bootstrap.Neisseriaceae_roary95 -n roary95_Neisseriaceae_bootsfinal
+
+##################################################
+
+Generated new fastANI input files that would allow for the resulting matrix to be in the right order. Saved as ref_list_reorded.txt and query_list_reordered.txt. Ran default.
+
+
+Ran again by hand with even lower cutoffs bc I noticed that the patterns changed with what cutoff was selected.
+
+time roary -f /Users/danielmorreale/Desktop/Neisseriaceae/Genomes_Neisseriaceae_Kingellaclade/roary/50cd80/ -e -n -i 50 -p 8 -cd 80 *.gff
+
+time roary -f /Users/danielmorreale/Desktop/Neisseriaceae/Genomes_Neisseriaceae_Kingellaclade/roary/50cd99/ -e -n -i 50 -p 8 *.gff
+
+
+Drew core genome tree for these new analyses and use the accessory_binary_genes.fa to make a pangeome tree.
+
+##################################################
+raxml -T 8 -m GTRGAMMA -f d -N 1 -s core_gene_alignment.aln -n Neisseriaceae_core_genome_roary50cd80 -p 1977
+
+qsub -N Neisseriaceae_50cd80 -l walltime=950:00:00 -o Neisseriaceae__50cd80.stdout -e Neisseriaceae__50cd80.stderr -V -M danmorr@pennmedicine.upenn.edu -- /usr/local/software/bin/raxml -T 8 -m GTRGAMMA -N 100 -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/50cd80/core_gene_alignment.aln -n Neisseriaceae__50cd80 -p 1977 -b 1977
+
+raxml -T 8 -m GTRGAMMA -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/50cd80/core_gene_alignment.aln -f b -t /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/50cd80/RAxML_result.Neisseriaceae_core_genome_roary95 -z /home/dmorreale/RAxML_bootstrap.Neisseriaceae__50cd80 -n roary50cd80_Neisseriaceae_bootsfinal
+
+##################################################
+raxml -T 8 -m GTRGAMMA -f d -N 1 -s core_gene_alignment.aln -n Neisseriaceae_core_genome_roary50cd99 -p 1977
+
+qsub -N Neisseriaceae_50cd99 -l walltime=950:00:00 -o Neisseriaceae__50cd99.stdout -e Neisseriaceae__50cd99.stderr -V -M danmorr@pennmedicine.upenn.edu -- /usr/local/software/bin/raxml -T 8 -m GTRGAMMA -N 100 -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/50cd99/core_gene_alignment.aln -n Neisseriaceae__50cd99 -p 1977 -b 1977
+
+##################################################
+##################################################
+##################################################
+##################################################
+To do the pangenome, useed the accessory binary genes and replaced A with 1 and C with 0.
+
+
+
+raxml -T 8 -m BINGAMMA -f d -N 1 -s accessory_binary_genes_raxmlin.fa -n Neisseriaceae_pan_genome_roary75 -p 1977
+
+qsub -N Neisseriaceae_r75p -l walltime=950:00:00 -o Neisseriaceae_r75p.stdout -e Neisseriaceae_r75p.stderr -V -M danmorr@pennmedicine.upenn.edu -- /usr/local/software/bin/raxml -T 8 -m BINGAMMA -N 100 -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/75/accessory_binary_genes_raxmlin.fa -n Neisseriaceae_r75p -p 1977 -b 1977
+
+raxml -T 8 -m BINGAMMA -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/75/accessory_binary_genes_raxmlin.fa -f b -t /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/75/RAxML_result.Neisseriaceae_pan_genome_roary75 -z /home/dmorreale/RAxML_bootstrap.Neisseriaceae_r75p -n r75p_Neisseriaceae_bootsfinal
+
+##################################################
+
+raxml -T 8 -m BINGAMMA -f d -N 1 -s accessory_binary_genes_raxmlin.fa -n Neisseriaceae_pan_genome_roary50cd99 -p 1977
+
+qsub -N Neisseriaceae_r50cd99p -l walltime=950:00:00 -o Neisseriaceae_r50cd99p.stdout -e Neisseriaceae_r50cd99p.stderr -V -M danmorr@pennmedicine.upenn.edu -- /usr/local/software/bin/raxml -T 8 -m BINGAMMA -N 100 -s /home/dmorreale/array1/Neisseriaceae_tree/roary_coregenome/50cd99/accessory_binary_genes_raxmlin.fa -n Neisseriaceae_r50cd99p -p 1977 -b 1977
+
+##################################################
+
+raxml -T 8 -m BINGAMMA -f d -N 1 -s accessory_binary_genes_raxmlin.fa -n Neisseriaceae_pan_genome_roary50cd80 -p 1977
+
+
+
+ANI was calculated using FASTANI, dDDH calculated from TYGS and full outputs were saved here. To confirm gene p/a tree, drew some with parsimony and they all look the same so either the matrix is fucked or the tree is right. Its not that imporant for the taxonomic conclusions. 
+
